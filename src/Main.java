@@ -12,7 +12,6 @@ public class Main {
         while (total < 2_459_000) {
             month++;
             total = total + salary;
-            total = total + total / 100;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
         }
 
@@ -41,11 +40,11 @@ public class Main {
         System.out.println(" ");
 
         int population = 12_000_000;
-        int birthRate = 17 * (population / 1000);
-        int mortalityRate = 8 * (population / 1000);
+        int birthRate = 17;
+        int mortalityRate = 8;
         int year = 0;
         while (year < 10) {
-            population = population + (birthRate - mortalityRate);
+            population = population + (birthRate - mortalityRate)*(population/1000);
             year++;
             System.out.println("Год " + year + ", численность населения составляет " + population);
         }
